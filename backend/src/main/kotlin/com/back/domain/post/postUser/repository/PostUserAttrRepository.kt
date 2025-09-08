@@ -1,0 +1,9 @@
+package com.back.domain.post.postUser.repository
+
+import com.back.domain.post.postUser.entity.PostUser
+import com.back.domain.post.postUser.entity.PostUserAttr
+import org.springframework.data.jpa.repository.JpaRepository
+
+interface PostUserAttrRepository : JpaRepository<PostUserAttr, Int> {
+    fun findBySubjectAndName(subject: PostUser, name: String): PostUserAttr?
+}
