@@ -9,7 +9,7 @@ terraform {
 
 # AWS 설정 시작
 provider "aws" {
-  region = "ap-northeast-2"
+  region = var.region
 }
 # AWS 설정 끝
 
@@ -21,7 +21,7 @@ resource "aws_vpc" "vpc_1" {
   enable_dns_hostnames = true
 
   tags = {
-    Name = "terra-vpc-1"
+    Name = "${var.prefix}-vpc-1"
   }
 }
 
@@ -32,6 +32,6 @@ resource "aws_vpc" "vpc_2" {
   enable_dns_hostnames = true
 
   tags = {
-    Name = "terra-vpc-2"
+    Name = "${var.prefix}-vpc-2"
   }
 }
