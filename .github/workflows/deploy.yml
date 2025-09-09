@@ -12,6 +12,10 @@ env:
   DOCKER_NETWORK: common # 도커 네트워크
   BACKEND_DIR: backend # Dockerfile 위치
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }} # 커밋이 짧은 시간 안에 몰려도 최신 커밋에 대해서만 액션이 수행되도록
+  cancel-in-progress: false # 기존에 시작된 작업은 새 커밋이 들어왔다고 해서 바로 끝내지 않고 workflow run이 끝날 때까지 대기
+
 on:
   push:
     paths:
