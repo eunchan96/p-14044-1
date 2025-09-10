@@ -15,7 +15,7 @@ export default withAdmin(function Page() {
   useEffect(() => {
     client
       .GET("/api/v1/adm/members")
-      .then((res) => res.data && setMembers(res.data.content));
+      .then((res) => res.data && setMembers(res.data.items));
   }, []);
 
   if (members == null) return <div>로딩중...</div>;
