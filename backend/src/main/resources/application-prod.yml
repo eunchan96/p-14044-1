@@ -10,6 +10,12 @@ spring:
     username: lldjlocal
     password: 1234
     driver-class-name: com.mysql.cj.jdbc.Driver
+logging:
+  level:
+    org.hibernate.orm.jdbc.bind: INFO
+    org.hibernate.orm.jdbc.extract: INFO
+    org.springframework.transaction.interceptor: INFO
+    com.back: INFO
 custom:
   site:
     cookieDomain: "${custom.prod.cookieDomain}"

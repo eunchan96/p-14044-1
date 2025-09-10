@@ -1,5 +1,6 @@
 package com.back.domain.member.member.entity
 
+//import com.back.global.app.AppConfig
 import com.back.global.jpa.entity.BaseTime
 import jakarta.persistence.Column
 import jakarta.persistence.MappedSuperclass
@@ -17,6 +18,9 @@ abstract class BaseMember(
         get() {
             return profileImgUrl ?: "https://placehold.co/600x600?text=U_U"
         }
+
+//    val redirectToProfileImgUrlOrDefault: String
+//        get() = "${AppConfig.siteBackUrl}/api/v1/members/${id}/redirectToProfileImg"
 
     val isAdmin: Boolean
         get() = when (username) {
